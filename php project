@@ -1,0 +1,77 @@
+# Saibersys
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class Registration extends CI_Controller {
+	// Variable Declaration Here
+	public $headerPage = '../../views/header';
+	public $footerPage = '../../views/footer';
+	public $listPage = 'registration';
+	public $listPage_redirect = 'registration';
+	public $listPage_redirect_login = 'login';
+	
+	// Autoloading a system library usin constructor method
+	public function __construct() {
+        parent::__construct();
+		if($this->session->userdata('user_id')!='')
+		{
+			redirect(site_url());
+		}
+		$this->load->model('home/home_model','home_model'); 
+		$this->load->model('registration_model','my_model'); 
+ 		error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+		error_reporting(0);
+		ini_set('display_errors','off'); 
+		$this->load->helper('url');	
+    }
+	
+	public function index()
+	{	
+		$header['hcat'] = $this->home_model->get_all_cats();
+		$this->load->view($this->headerPage,$header);
+		$this->load->view($this->listPage);
+		$this->load->view($this->footerPage);
+	}
+	
+	public function register()
+	{
+		if($_POST['submit']!='')
+		{
+			
+			//echo'<pre>'; print_r($_POST); exit;
+			
+			$regis_email = $this->my_model->get_email($this->input->post('email'));
+			$regis_phone = $this->my_model->get_phone($this->input->post('cphone'));
+			if(empty($regis_email['email']))
+			{
+			
+				if(empty($regis_phone['comp_phone']))
+				{	
+					$result = $this->my_model->add_record();
+					if($result)
+					{
+						$this->session->set_flashdata('msg_succ', 'Registered Successfully. Login with your credentials...');
+						redirect($this->listPage_redirect_login);
+					}
+					else
+					{
+						$this->session->set_flashdata('msg_succ', 'Please Try Again...');
+						redirect($this->listPage_redirect);
+					}
+				}
+				else
+				{
+					$this->session->set_flashdata('msg_succ', 'Your Phone Was Already Registered...');
+					redirect($this->listPage_redirect);
+				}
+			
+			}
+			else
+			{
+				$this->session->set_flashdata('msg_succ', 'Your Email Was Already Registered...');
+				redirect($this->listPage_redirect);
+			}
+		}
+		
+	}
+
+}
+/* End of file Home.php */
