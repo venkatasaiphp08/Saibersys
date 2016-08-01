@@ -1,0 +1,122 @@
+1)FORM HANDLING
+<! DOCTYPE HTML>
+<html> 
+<body>
+
+<form action="welcome.php" method="post">
+Name: <input type="text" name="name"><br>
+E-mail: <input type="text" name="email"><br>
+<input type="submit">
+</form>
+
+</body>
+
+OUTPUT:
+Name:  
+E-mail:  
+ 
+
+2) VALIDATION CODE
+<! DOCTYPE HTML>  
+<Html>
+<Head>
+</head>
+<Body>  
+<? Php
+// define variables and set to empty values
+$name = $email = $gender = $comment = $website = "";
+If ($_SERVER ["REQUEST_METHOD"] == "POST") {
+  $name = test input ($_POST ["name"]);
+  $email = test input ($_POST ["email"]);
+  $website = test input ($_POST ["website"]);
+  $comment = test input ($_POST ["comment"]);
+$gender = test input ($_POST ["gender"]);
+}
+Function test input ($data) {
+  $data = trim ($data);
+  $data = strip slashes ($data);
+  $data = htmlspecialchars ($data);
+  Return $data;
+}
+?>
+<h2>PHP Form Validation Example</h2>
+<form method="post" action="<? Php echo 
+htmlspecialchars ($_SERVER["PHP_SELF"]);?>">  
+  Name: <input type="text" name="name">
+  <br><br>
+  E-mail: <input type="text" name="email">
+  <br><br>
+  Website: <input type="text" name="website">
+  <br><br>
+  Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+  <br><br>
+  Gender:
+  <input type="radio" name="gender" value="female">Female
+  <input type="radio" name="gender" value="male">Male
+  <br><br>
+  <input type="submit" name="submit" value="Submit">  
+</form>
+<?php
+echo "<h2>Your Input:</h2>";
+echo $name;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $website;
+echo "<br>";
+echo $comment;
+echo "<br>";
+echo $gender;
+?>
+</body>
+</html>
+OUTPUT:
+Name:   
+
+E-mail:   
+
+Website:   
+
+Comment:   
+
+Gender:  Female  Male 
+
+ 
+3) HTML LINKS
+<!DOCTYPE html>
+<html>
+<body>
+<p><a href="html_images.asp">HTML Images</a> is a link to a page on this website.</p>
+<p><a href="http://www.w3.org/">W3C</a> is a link to a website on the World Wide Web.</p>
+</body>
+</html>
+OUTPUT:
+HTML Images is a link to a page on this website.
+W3C is a link to a website on the World Wide Web.
+
+JAVASCRIPT FORM VALIDATION
+4) <!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<form name="myForm" action="demo_form.asp"
+onsubmit="return validateForm()" method="post">
+Name: <input type="text" name="fname">
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+OUTPUT:
+Name:    
