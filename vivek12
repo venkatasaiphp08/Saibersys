@@ -1,0 +1,268 @@
+HTML LINKS:
+•	<a href="url">link text</a>
+To insert Images:
+•	<a href="html_images.asp">HTML Images</a>
+HTML FORMS:
+<! DOCTYPE html>
+<Html>
+<Body>
+<Form>
+  First name :<br>
+  <input type="text" name="first name">
+  <br>
+  Last name :<br>
+  <input type="text" name="last name">
+</form>
+</body>
+</html>
+OUTPUT:
+First name:
+  
+Last name:
+ 
+
+CSS3 BOX SIZING:
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.div1 {
+    width: 300px;
+    height: 100px;
+    border: 1px solid blue;
+}
+
+.div2 {
+    width: 300px;
+    height: 100px;
+    padding: 50px;
+    border: 1px solid red;
+}
+</style>
+</head>
+<body>
+
+<div class="div1">This div is smaller (width is 300px and height is 100px).</div>
+<br>
+<div class="div2">This div is bigger (width is also 300px and height is 100px).</div>
+</body>
+</html>
+
+OUTPUT:
+This div is smaller (width is 300px and height is 100px).
+
+
+
+
+This div is bigger (width is also 300px and height is 100px).
+
+
+
+
+
+
+
+
+CSS LISTS:
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul.a {
+    list-style-type: circle;
+}
+
+ul.b {
+    list-style-type: square;
+}
+
+ol.c {
+    list-style-type: upper-roman;
+}
+
+ol.d {
+    list-style-type: lower-alpha;
+}
+</style>
+</head>
+<body>
+
+<p>Example of unordered lists:</p>
+<ul class="a">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ul>
+
+<ul class="b">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ul>
+
+<p>Example of ordered lists:</p>
+<ol class="c">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ol>
+
+<ol class="d">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ol>
+
+</body>
+</html>
+OUTPUT:
+Example of unordered lists:
+
+Coffee
+Tea
+Coca Cola
+Coffee
+Tea
+Coca Cola
+Example of ordered lists:
+
+Coffee
+Tea
+Coca Cola
+Coffee
+Tea
+Coca Cola.
+
+JAVASCRIPT FORMS:
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<form name="myForm" action="demo_form.asp"
+onsubmit="return validateForm()" method="post">
+Name: <input type="text" name="fname">
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
+OUTPUT:
+Name:    
+PHP FORMS:
+!DOCTYPE HTML>  
+<html>
+<head>
+</head>
+<body>  
+<?php
+// define variables and set to empty values
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $website = test_input($_POST["website"]);
+  $comment = test_input($_POST["comment"]);
+  $gender = test_input($_POST["gender"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+<h2>PHP Form Validation Example</h2>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+  Name: <input type="text" name="name">
+  <br><br>
+  E-mail: <input type="text" name="email">
+  <br><br>
+  Website: <input type="text" name="website">
+  <br><br>
+  Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+  <br><br>
+  Gender:
+  <input type="radio" name="gender" value="female">Female
+  <input type="radio" name="gender" value="male">Male
+  <br><br>
+  <input type="submit" name="submit" value="Submit">  
+</form>
+
+<?php
+echo "<h2>Your Input:</h2>";
+echo $name;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $website;
+echo "<br>";
+echo $comment;
+echo "<br>";
+echo $gender;
+?>
+</body>
+</html>
+PHP Form Validation Example
+Name:   
+
+E-mail:   
+
+Website:   
+
+Comment:   
+
+Gender:  Female  Male 
+
+ 
+DATABASE CONNECTIVITY THROUGH XAMPP
+
+WORKED WITH DRUPAL 7 installation AND DESIGNED THEME PAGES THROUGH TUTORIAL POINT STUDY GUIDE
+Drupal - Installation
+This chapter provides step-by-step procedure for Drupal installation. Before installing Drupal, the following system requirements are necessary.
+System Requirements for Drupal
+•	Database − MySQL 5.1+
+•	Web Server −
+o	WAMP (Windows)
+o	LAMP (Linux)
+o	XAMP (Multi-platform)
+o	MAMP (Macintosh)
+o	Nginx
+o	Microsoft IIS
+•	Operating System − Cross-platform
+•	Browser Support − IE (Internet Explorer 8+), Firefox, Google Chrome, Safari, Opera
+•	SSL (Secure Socket Layer) − A valid security certificate is required for HTTPS
+•	PHP Compatibility − PHP 5.2+
+Download Drupal
+Step 1 − Download Drupal and copy to your web server from this linkhttps://www.drupal.org/project/drupal
+Step 2 − Select the latest version of zip file which you want to download as shown in the following screen. The Recommended releases are the latest stable releases of either version.
+Set Up Wizard
+It's very easy to set up Drupal on your system. The following steps describe how to set up Drupal locally on your system.
+Step 1 − Download the zip file and extract it to your local computer. Rename the folder from its current name to any name of your choice to refer to your site.
+Step 2 − Drupal requires MySQL database. Create a new empty database with user/password for Drupal to use. (For e.g., user as "root" and password as "root" or else you can set as per your choice).
+Step 3 − Open your browser and navigate to your Drupal file path, you will see the first Drupal installer screen as shown in the following image. In our case the path is localhost/< Your_drupal_folder >. Select the Standard option and click Save and continue.\
+Step 4 − Select the default language for Drupal website.
+
+After selecting the language, click Save and continue.
+Step 5 − Go to Database configuration page. You need to enter the type of database you will be using, and other details as follows.
+
+•	Database Type − Select the database type. By default, it will be MySQL.
+•	Database name − Enter the database name for Drupal.
+•	Database username − Enter the user name of your MySQL database.
+•	Database password − Enter the password which you had set for MySQL Database.
+
+WORKING ON ECOMMERCE BY USING Commerce Kick start module USING DRUPAL.
