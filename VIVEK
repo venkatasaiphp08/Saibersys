@@ -1,0 +1,178 @@
+LAST WEEK I GONE THROUGH ALL THE INTERVIEW QUESTIONS ON PHP ,DRUPAL
+1) What is PHP?
+PHP is a web language based on scripts that allows developers to dynamically create generated web pages.
+2) What does the initials of PHP stand for?
+PHP means PHP: Hypertext Preprocessor.
+3) Which programming language does PHP resemble to?
+PHP syntax resembles Perl and C
+4) What does PEAR stands for?
+PEAR means “PHP Extension and Application Repository”. it extends PHP and provides a higher level of programming for web developers.
+5) What is the actually used PHP version?
+Version 5 is the actually used version of PHP.
+6) How do you execute a PHP script from the command line?
+Just use the PHP command line interface (CLI) and specify the file name of the script to be executed as follows:
+ 
+1	php script.php
+ 
+7) How to run the interactive PHP shell from the command line interface?
+Just use the PHP CLI program with the option -a as follows:
+ 
+1	php -a
+ 
+8) What are the correct and the most two common way to start and finish a PHP block of code?
+The two most  common ways to start and finish a PHP script are: <?php [   —  PHP code—- ] ?> and <? [—  PHP code  —] ?>
+9) How can we display the output directly to the browser?
+To be able to display the output directly to the browser, we have to use the special tags <?= and ?>.
+10) What is the main difference between PHP 4 and PHP 5?
+PHP 5 presents many additional OOP (Object Oriented Programming) features.
+11) Is multiple inheritance supported in PHP?
+PHP includes only single inheritance, it means that a class can be extended from only one single class using the keyword ‘extended’.
+12) What is the meaning of a final class and a final method?
+‘final’ is introduced in PHP5. Final class means that this class cannot be extended and a final method cannot be overrided.
+13) How comparison of objects is done in PHP5?
+We use the operator ‘==’ to test is two object are instanced from the same class and have same attributes and equal values. We can test if two object are refering to the same instance of the same class by the use of the identity operator ‘===’.
+14) How can PHP and HTML interact?
+It is possible to generate HTML through PHP scripts, and it is possible to pass informations from HTML to PHP.
+15) What type of operation is needed when passing values through a form or an URL?
+If we would like to pass values througn a form or an URL then we need to encode and to decode them using htmlspecialchars() and urlencode().
+16) How can PHP and Javascript interact?
+PHP and Javascript cannot directly interacts since PHP is a server side language and Javascript is a client side language. However we can exchange variables since PHP is able to generate Javascript code to be executed by the browser and it is possible to pass specific variables back to PHP via the URL.
+17) What is needed to be able to use image function?
+GD library is needed to be able execute image functions.
+18) What is the use of the function ‘imagetypes()’?
+imagetypes() gives the image format and types supported by the current version of GD-PHP.
+19) What are the functions to be used to get the image’s properties (size, width and height)?
+The functions are getimagesize() for size, imagesx() for width and imagesy() for height.
+20) How failures in execution are handled with include() and require() functions?
+If the function require() cannot access to the file then it ends with a fatal error. However, the include() function gives a warning and the PHP script continues to execute.
+21) What is the main difference between require() and require_once()?
+require() and require_once() perform the same task except that the second function checks if the PHP script is already included or not before executing it.
+(same for include_once() and include())
+22) How can I display text with a PHP script?
+Two methods are possible:
+ 
+1	<!--?php echo "Method 1"; print "Method 2"; ?-->
+ 
+23) How can we display information of a variable and readable by human with PHP?
+To be able to display a human-readable result we use print_r().
+24) How is it possible to set an infinite execution time for PHP script?
+The set_time_limit(0) added at the beginning of a script sets to infinite the time of execution to not have the PHP error ‘maximum execution time exceeded’.It is also possible to specify this in the php.ini file.
+ 25) What does the PHP error ‘Parse error in PHP – unexpected T_variable at line x’ means?
+This is a PHP syntax error expressing that a mistake at the line x stops parsing and executing the program.
+26) What should we do to be able to export data into an Excel file?
+The most common and used way is to get data into a format supported by Excel. For example, it is possible to write a .csv file, to choose for example comma as separator between fields and then to open the file with Excel.
+27) What is the function file_get_contents() usefull for?
+file_get_contents() lets reading a file and storing it in a string variable.
+28) How can we connect to a MySQL database from a PHP script?
+To be able to connect to a MySQL database, we must use mysql_connect() function as follows:
+ 
+1	<!--?php $database = mysql_connect("HOST", "USER_NAME", "PASSWORD"); mysql_select_db("DATABASE_NAME",$database); ?-->
+29) What is the function mysql_pconnect() usefull for?
+mysql_pconnect() ensure a persistent connection to the database, it means that the connection do not close when the the PHP script ends.
+30) How the result set of Mysql be handled in PHP?
+The result set can be handled using mysql_fetch_array, mysql_fetch_assoc, mysql_fetch_object or mysql_fetch_row.
+31) How is it possible to know the number of rows returned in result set?
+The function mysql_num_rows() returns the number of rows in a result set.
+32) Which function gives us the number of affected entries by a query?
+mysql_affected_rows() return the number of entries affected by an SQL query.
+33) What is the difference between mysql_fetch_object() and mysql_fetch_array()?
+The mysql_fetch_object() function collects the first single matching record where mysql_fetch_array() collects all matching records from the table in an array.
+34) How can we access the data sent through the URL with the GET method?
+In order to access the data sent via the GET method, we you use $_GET array like this:
+www.url.com?var=value
+$variable = $_GET[“var”]; this will now contain ‘value’
+35) How can we access the data sent through the URL with the POST method?
+To access the data sent this way, you use the $_POST array.
+Imagine you have a form field called ‘var’ on the form, when the user clicks submit to the post form, you can then access the value like this:
+$_POST[“var”];
+36) How can we check the value of a given variable is a number?
+It is possible to use the dedicated function, is_numeric() to check whether it is a number or not.
+37) How can we check the value of a given variable is alphanumeric?
+It is possible to use the dedicated function, ctype_alnum to check whether it is an alphanumeric value or not.
+38) How do I check if a given variable is empty?
+If we want to check whether a variable has a value or not, it is possible to use the empty() function.
+39) What does the unlink() function means?
+The unlink() function is dedicated for file system handling. It simply deletes the file given as entry.
+
+DRUPAL
+ Explain what is Drupal?
+Drupal is a Content Management System (CMS).  It’s an open source content and free CMS framework written in PHP.  It enables you to organize, manage and publish content with ease and comes with a variety of customization option.
+2)      Why Drupal is considered powerful CMS compare to other CMS system?
+Using content construction kit Drupal allows you to create multiple content types without any programming skills. And for each content type it allows customize theme template. You can have an article, story, slideshow, content type and so on.
+3)      Mention what are the key features of Drupal?
+There are two key features of Drupal
+•	Upload Module: It enables users to attach different types of files to node types of your liking.
+•	Embedding: It enables to embed media within nodes that are hosted on your websites.
+4)      Explain how caching work in Drupal?
+Through caching Drupal allows to speed up website using different configuration like page caching, block caching and lifetime for cached pages.
+•	Page Caching:  It enables the entire HTML of each page to be stored in the database.  It reduces the amount of queries needed
+•	Block Caching:  You can set the cache setting for a block in views, when block created by views
+•	Minimum cache lifetime:  It is the amount of time before the page cache is cleared. On each cron run, page caches are cleared.
+•	Expiration of cached pages: It only applies for an external mechanism, for example, your browser cache or varnish
+
+5)      What is a patch?
+A patch is a file that contains a list of differences between one set of files, and another.  Through patches, all the changes in code like additions or deletions to Drupal core can be made. Also, patches can be used to make changes to another copy of the original or main file.
+6)      What do PDO mean?
+PDO means PHP Data Object; it is a lean and consistent way to access databases. It allows developers to write portable code with ease.
+7)      Explain how database system of Drupal works?
+In a database Drupal stores information, and each information has its own database table.  For example, the basic information regarding the nodes of your site are stored and kept in the node table, and if you use the CCK module to add fields to your nodes, the field information is stored in a separate table.
+8)      Name some of the most commonly used PHP based CMSs?
+Some of the commonly used PHP are
+•	Drupal
+•	Joomla
+•	WordPress
+•	TYPO3
+ 
+9)      What is DRUSH in Drupal?
+DRUSH is a command line shell and UNIX scripting interface for Drupal
+10)   Explain what is module in Drupal? List out some of the modules used in Drupal?
+Modules are like plugin for your site.  It allows you to add different functions to your site such as polls, contact forms and search fields.  Some of the modules recommended are
+•	Views
+•	Token
+•	Ctools
+•	Quicktabs
+•	Pathauto
+11)   Explain what Drupal distributions is and when to use?
+
+
+Distributions are full copies of Drupal, which includes Drupal Core, along with additional software as modules, themes, libraries and installation profiles. You can use distributions for
+•	Evaluating Drupal
+•	Demoing Drupal
+•	Learning Drupal
+•	Quickly binding Site
+12)   List out the SEO modules available in Drupal?
+Some of the SEO modules available in Drupal are
+•	Pathauto
+•	Meta tags/ Node words
+•	Service Links
+•	Google Analytics
+•	Related Links
+•	Search 404
+•	Site map
+•	Url list
+13)   Explain what is Drupal weight?
+The term Drupal weight is used to describe the priority or order in which the function is processed, or block/ node is displayed.
+A heavier (+10) weights will appear lower in lists while a lower weight (-10) will float to the top of lists.
+14)   Explain what is Drupal cron?
+To execute commands or scripts automatically at specified time and date intervals, you have to use Drupal cron.
+15)   Why Drupal needs database? What databases are supported?
+Drupal stores its information in the database like individual pages, registered users and so on.  For your Drupal site, database forms the back end; it supports MySQL /MariaDB, PostgreSQL and in Drupal 7, SQLite.
+16)   Explain what is render array in Drupal?
+For Drupal content render arrays are the basic building blocks.  In Drupal, render arrays provide you a structured way to programmatically change the content before it is displayed.
+17)   Explain what is the use of Ctools in Drupal?
+This suite is a set of APIs and tools, and it makes easier to handle AJAX requests and tell the client what to do with them.
+18)   What are the files required for theme and module?
+Drupal uses .info files to store metadata about themes and modules.
+The files required for
+•	Theme: style.css , page.tpl.php , template.php, block.tpl.php
+•	Module: modulename.info , modulename.module , optional modulename.install
+19)   Explain using module how you can drop the table?
+To drop the table you can use db_drop_table in install file.
+20)   What are the translations available in Drupal?
+Drupal is translated into all popular languages including
+•	Catalan
+•	French
+•	Hungarian
+•	Dutch
+21)   Does Drupal provides support?
+Like with all open-source projects there is no commercial support available. Though, there is a vast online community for Drupal available via Forums and IRC online chat who are more than eager to answer your queries.
